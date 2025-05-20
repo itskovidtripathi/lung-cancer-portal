@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Support - ICPC</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <!-- 🔵 HEADER SECTION -->
+    <header class="site-header">
+        <div class="header-left">
+            <a href="https://shuats.edu.in/">
+                <img src="../assets/shuatslogo.jpg" alt="SHUATS Logo" class="logo" />
+            </a>
+        </div>
+        <div class="header-right"></div>
+        <h1>International Cancer Patient Coalition</h1>
+        <div class="header-right"></div>
+        <div class="header-left">
+            <a href='/'>
+                <img src="../assets/logo.jpg" alt="ICPC Logo" class="logo" />
+            </a>
+        </div>
+    </header>
+
+
+
+    <!-- 🧭 NAVIGATION BAR -->
+    <nav class="navbar">
+      <ul class="nav-list">
+        <!-- HOME -->
+        <li class="nav-item">
+          <a class='nav-title' href='/'>Home</a>
+        </li>
+
+        <!-- KNOW ABOUT CANCER -->
+        <li class="nav-item has-dropdown">
+          <div class="dropdown-wrapper" onclick="toggleDropdown(event, 'cancer-dropdown', this)">
+            <span class="nav-title">About Us<span class="arrow">▼</span></span>
+            <div class="dropdown" id="cancer-dropdown">
+              <ul class="dropdown-list" id="cancer-options">
+                <li><a class='dropdown-item' href='/about'>History</a></li>
+                <li><a class='dropdown-item' href='/profile'>Profile</a></li>
+                <li><a class='dropdown-item' href='/faq'>FAQs</a></li>
+                <li><a class='dropdown-item' href='/board'>Administration</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <!-- SERVICES OFFERED -->
+        <li class="nav-item has-dropdown">
+          <div class="dropdown-wrapper" onclick="toggleDropdown(event, 'faicilities-dropdown')">
+            <span class="nav-title">Services Offered<span class="arrow">▼</span></span>
+            <div class="dropdown" id="faicilities-dropdown">
+              <ul class="dropdown-list" id="faicilities-options">
+                <a href="https://lungscan-ai.streamlit.app" class="dropdown-item">AI based Prediction</a>
+                <a class='dropdown-item' href='/esr'>Connect with experts</a>
+                <a class='dropdown-item' href='/esr'>Research & Development</a>
+                <a href="#" class="dropdown-item">Government Schemes</a>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <!-- Events -->
+        <li class="nav-item has-dropdown">
+          <div class="dropdown-wrapper" onclick="toggleDropdown(event, 'events-dropdown', this)">
+            <span class="nav-title">Events<span class="arrow">▼</span></span>
+            <div class="dropdown" id="events-dropdown">
+              <ul class="dropdown-list" id="events-options">
+                <li><a class='dropdown-item' href='/events'>All Events</a></li>
+                <li><a class='dropdown-item' href='/gallery'>Gallery</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <!-- External Links -->
+        <li class="nav-item has-dropdown">
+          <div class="dropdown-wrapper" onclick="toggleDropdown(event, 'main-dropdown', this)">
+            <span class="nav-title">External Links<span class="arrow">▼</span></span>
+            <div class="dropdown" id="main-dropdown">
+              <ul class="dropdown-list" id="main-options">
+                <li><a class="dropdown-item" href="https://shuats.edu.in/" target="_blank">SHUATS</a></li>
+                <li><a class="dropdown-item" href="https://unite4cancer.com/" target="_blank">ICPC</a></li>
+                <li><a class="dropdown-item" href="https://www.mohfw.gov.in/" target="_blank">MOHFW</a></li>
+                <li><a class="dropdown-item" href="https://www.icmr.gov.in/" target="_blank">ICMR</a></li>
+                <li><a class="dropdown-item" href="https://dbtindia.gov.in/" target="_blank">DBT</a></li>
+                <li><a class="dropdown-item" href="https://dst.gov.in/" target="_blank">DST</a></li>
+                <li><a class="dropdown-item" href="https://www.csir.res.in/" target="_blank">CSIR</a></li>
+                <li><a class="dropdown-item" href="https://dhr.gov.in/" target="_blank">DHR</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Back Button -->
+    <div class="back-button-container">
+        <a href="tailored-info-options-details.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Back to Options
+        </a>
+    </div>
+
+    <main class="esr-main">
+        <section class="stage-selection">
+            <h2 class="services-title">Financial Support Programs</h2>
+            
+            <div class="stage-content">
+                <!-- Support Overview -->
+                <div class="support-overview">
+                    <div class="support-icon">
+                        <i class="fas fa-heart fa-3x" style="color: #072ACB;"></i>
+                    </div>
+                    <h3>ICPC Financial Assistance</h3>
+                    <p>Supporting patients through their cancer treatment journey with comprehensive financial aid programs.</p>
+                </div>
+
+                <!-- Support Programs -->
+                <div class="support-programs">
+                    <div class="program-card">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <h4>Treatment Cost Coverage</h4>
+                        <p>Up to 60% coverage of treatment costs for eligible patients</p>
+                    </div>
+
+                    <div class="program-card">
+                        <i class="fas fa-pills"></i>
+                        <h4>Medication Support</h4>
+                        <p>Assistance with essential medications and supplies</p>
+                    </div>
+
+                    <div class="program-card">
+                        <i class="fas fa-hospital-user"></i>
+                        <h4>Hospital Care</h4>
+                        <p>Coverage for hospital stays and procedures</p>
+                    </div>
+                </div>
+
+                <!-- Eligibility Section -->
+                <div class="eligibility-section">
+                    <h3>Eligibility Criteria</h3>
+                    <ul>
+                        <li>Confirmed cancer diagnosis</li>
+                        <li>Income below specified threshold</li>
+                        <li>Indian resident</li>
+                        <li>Valid medical documentation</li>
+                    </ul>
+                </div>
+
+                <!-- Application Process -->
+                <div class="application-process">
+                    <h3>How to Apply</h3>
+                    <ol>
+                        <li>Complete the online application form</li>
+                        <li>Submit required documents</li>
+                        <li>Undergo eligibility assessment</li>
+                        <li>Receive support decision</li>
+                    </ol>
+                    <a href="#" class="stage-btn">Apply Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="esr-hero">
+            <div class="esr-hero-content">
+                <h1 class="esr-title">"Supporting Your Fight"</h1>
+                <p class="esr-subtitle">
+                    ICPC is committed to providing financial support to those in need
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add this CSS to the existing styles -->
+    <style>
+        .support-overview {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .support-programs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .program-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .program-card i {
+            font-size: 2em;
+            color: #072ACB;
+            margin-bottom: 15px;
+        }
+
+        .eligibility-section, 
+        .application-process {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .eligibility-section ul,
+        .application-process ol {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .eligibility-section li,
+        .application-process li {
+            margin-bottom: 10px;
+            color: #333;
+        }
+    </style>
+
+    <script src="../scripts.js"></script>
+</body>
+</html>

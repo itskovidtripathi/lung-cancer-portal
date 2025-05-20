@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lung Cancer Prediction System</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Chatbot Button Top Right -->
+  <div class="chatbot-container">
+    <button class="chatbot-btn" onclick="toggleChat()">
+      <i class="fas fa-robot"></i>
+    </button>
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">
+        <h3>Cancer Support Chatbot</h3>
+        <button class="close-chat" onclick="toggleChat()">&times;</button>
+      </div>
+      <div class="chat-body" id="chatBody">
+        <!-- Chat messages will appear here -->
+        <div class="chat-message bot-message">
+          Hello! I'm here to help with cancer-related information. How can I
+          assist you today?
+        </div>
+      </div>
+      <div class="chat-footer">
+        <input type="text" class="chat-input" placeholder="Type your message..." id="userInput" />
+        <button class="sent-chat" onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Human Assistant Button Bottom Right -->
+  <div class="assistant-container">
+    <button class="assistant-btn" onclick="connectToAssistant()">
+      <i class="fas fa-user-md"></i>
+    </button>
+  </div>
+
+  <!-- 🔵 HEADER SECTION -->
+  <header class="site-header">
+    <div class="header-left">
+      <a href="https://shuats.edu.in/">
+        <img src="assets/shuatslogo.jpg" alt="India Against Cancer" class="logo" />
+      </a>
+    </div>
+
+    <div class="header-right"></div>
+
+    <h1>International Cancer Patient Coalition</h1>
+    <div class="header-right"></div>
+    <div class="header-left">
+      <a href='/'>
+        <img src="assets/logo.jpg" alt="India Against Cancer" class="logo" />
+      </a>
+    </div>
+    </div>
+  </header>
+
+  <!-- 🧭 NAVIGATION BAR -->
+  <nav class="navbar">
+    <ul class="nav-list">
+      <!-- HOME -->
+      <li class="nav-item">
+        <a class='nav-title' href='/'>Home</a>
+      </li>
+
+      <!-- KNOW ABOUT CANCER -->
+      <li class="nav-item has-dropdown">
+        <div class="dropdown-wrapper" onclick="toggleDropdown(event, 'cancer-dropdown', this)">
+          <span class="nav-title">About Us<span class="arrow">▼</span></span>
+          <div class="dropdown" id="cancer-dropdown">
+            <ul class="dropdown-list" id="cancer-options">
+              <li><a class='dropdown-item' href='/about'>History</a></li>
+              <li>
+                <a class='dropdown-item' href='/profile'>Profile</a>
+              </li>
+              <li><a class='dropdown-item' href='/faq'>FAQs</a></li>
+              <li>
+                <a class='dropdown-item' href='/board'>Administration</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <!-- SERVICES OFFERED -->
+      <li class="nav-item has-dropdown">
+        <div class="dropdown-wrapper" onclick="toggleDropdown(event, 'faicilities-dropdown')">
+          <span class="nav-title">Services Offered<span class="arrow">▼</span></span>
+          <div class="dropdown" id="faicilities-dropdown">
+            <ul class="dropdown-list" id="faicilities-options">
+              <a href="https://lungscan-ai.streamlit.app" class="dropdown-item">AI based Prediction</a>
+              <a class='dropdown-item' href='/esr'>Connect with experts</a>
+              <a class='dropdown-item' href='/esr'>Research & Development</a>
+              <a href="#" class="dropdown-item">Government Schemes</a>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <!-- OTHER STATIC LINKS -->
+
+      <!-- Events -->
+      <li class="nav-item has-dropdown">
+        <div class="dropdown-wrapper" onclick="toggleDropdown(event, 'events-dropdown', this)">
+          <span class="nav-title">Events<span class="arrow">▼</span></span>
+          <div class="dropdown" id="events-dropdown">
+            <ul class="dropdown-list" id="events-options">
+              <li>
+                <a class='dropdown-item' href='/events'>All Events</a>
+              </li>
+              <li>
+                <a class='dropdown-item' href='/gallery'>Gallery</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <!-- main website -->
+      <li class="nav-item has-dropdown">
+        <div class="dropdown-wrapper" onclick="toggleDropdown(event, 'main-dropdown', this)">
+          <span class="nav-title">External Links<span class="arrow">▼</span></span>
+          <div class="dropdown" id="main-dropdown">
+            <ul class="dropdown-list" id="main-options">
+              <li>
+                <a class="dropdown-item" href="https://shuats.edu.in/" target="_blank">SHUATS</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://unite4cancer.com/" target="_blank">ICPC</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://www.mohfw.gov.in/" target="_blank">MOHFW</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://www.icmr.gov.in/" target="_blank">ICMR</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://dbtindia.gov.in/" target="_blank">DBT</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://dst.gov.in/" target="_blank">DST</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://www.csir.res.in/" target="_blank">CSIR</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://dhr.gov.in/" target="_blank">DHR</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="esr-main">
+
+
+    <!-- Stage Selection Section -->
+    <section class="stage-selection">
+      <h2 class="services-title">Rare & Hard to Treat Cancers</h2>
+      <div class="stage-cards-container">
+        <!-- Tailored Information Card -->
+        <div class="stage-card early-stage">
+          <div class="stage-icon">
+            <i class="fas fa-info-circle"></i>
+          </div>
+          <h3>Tailored Information</h3>
+          <p>
+            Access personalized resources about lung cancer, including risk factors, early warning signs, and prevention strategies tailored to your needs.
+          </p>
+          <a href="./tailored-information/tailored-info-options-details.html" class="stage-btn">Learn More</a>
+        </div>
+
+        <!-- Guidelines Card -->
+        <div class="stage-card during-stage">
+          <div class="stage-icon">
+            <i class="fas fa-book-medical"></i>
+          </div>
+          <h3>Guidelines</h3>
+          <p>
+            Explore comprehensive medical guidelines, standard protocols, and best practices for lung cancer diagnosis and management.
+          </p>
+          <a href="guidelines.html" class="stage-btn">Learn More</a>
+        </div>
+
+        <!-- Treatment Options Card -->
+        <div class="stage-card after-stage">
+          <div class="stage-icon">
+            <i class="fas fa-stethoscope"></i>
+          </div>
+          <h3>Treatment Options</h3>
+          <p>
+            Discover various treatment approaches, from traditional therapies to innovative solutions, helping you make informed decisions about care.
+          </p>
+          <a href="#" class="stage-btn">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="esr-hero">
+      <div class="esr-hero-content">
+        <h1 class="esr-title">"Early Detection Saves Lives."</h1>
+        <p class="esr-subtitle">
+          Let's spread awareness, break the silence, and fight cancer with
+          knowledge & kindness.
+        </p>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+<section class="testimonials-section">
+  <h2 class="section-title">What People Say</h2>
+  <div class="testimonials-container">
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        "This platform has been a lifesaver for me. The resources and support I received were invaluable during my treatment."
+      </p>
+      <h4 class="testimonial-author">- John Doe</h4>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        "As a healthcare professional, I found the AI-based prediction tool extremely helpful in diagnosing early-stage cancer."
+      </p>
+      <h4 class="testimonial-author">- Dr. Jane Smith</h4>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        "The information provided here is comprehensive and easy to understand. Highly recommended for patients and families."
+      </p>
+      <h4 class="testimonial-author">- Emily Johnson</h4>
+    </div>
+  </div>
+</section>
+
+<!-- Our Partners Section -->
+<section class="partners-section">
+  <h2 class="section-title">Our Partners</h2>
+  <div class="partners-container">
+    <img src="assets/event1.jpg" alt="Partner 1" class="partner-logo" />
+    <img src="assets/event2.jpg" alt="Partner 2" class="partner-logo" />
+    <img src="assets/event3.jpg" alt="Partner 3" class="partner-logo" />
+    <img src="assets/event4.jpg" alt="Partner 4" class="partner-logo" />
+  </div>
+</section>
+
+<!-- Contact Us Section -->
+<section class="contact-section">
+  <h2 class="section-title">Get in Touch</h2>
+  <div class="contact-container">
+    <form class="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your Name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Your Email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="contact-btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
