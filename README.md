@@ -2,10 +2,10 @@
 
 <h2>A comprehensive digital platform designed to empower patients, caregivers, and healthcare providers with accessible lung cancer information and resources.</h2>
 
-![Website Preview](./UI_Preview/UI1.png) <h3>AI Prediction Preview</h3> 
-![Website Preview](./UI_Preview/UI2.png) <h3>Website Landing Page Preview</h3> 
-![Chatbot Interface](./UI_Preview/UI6.png) <h3>Chatbot Preview 1</h3> 
-![Chatbot Interface](./UI_Preview/UI5.png) <h3>Chatbot Preview 2</h3> 
+![Website Preview](./UI_Preview/UI1.png) <h3>AI-based Prediction UI Preview</h3> 
+![Website Preview](./UI_Preview/UI2.png) <h3>Website Landing Page UI Preview</h3> 
+![Chatbot Interface](./UI_Preview/UI6.png) <h3>Chatbot UI Preview 1</h3> 
+![Chatbot Interface](./UI_Preview/UI5.png) <h3>Chatbot UI Preview 2</h3> 
 
 ## 🌟 Features
 
