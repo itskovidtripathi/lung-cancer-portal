@@ -78,8 +78,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 For any queries or support, please reach out to:
-- Email: [shimanshu.3107@gmail.com] for AI/ML - based queries.
-- Email: [officialkovid@gmail.com] for Full-stack web development - related queries.
+<h3>- Email: shimanshu.3107@gmail.com for AI/ML - based queries.</h3>
+<h3>- Email: officialkovid@gmail.com for Full-stack web development - related queries.</h3>
 
 ## 🔄 Updates
 - Latest update: [May 21, 2025]
@@ -88,5 +88,6 @@ For any queries or support, please reach out to:
 ---
 
 <div align="center">
-Made with ❤️ for better healthcare information access
+<h1>Made with ❤️ for better healthcare information access</h1>
 </div> 
+
